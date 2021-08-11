@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     socket.on("newPlayer", (players) => {
       setPlayersInRoom(players);
-      console.log(players)
     });
 
     socket.on("newSound", (sound) => {
