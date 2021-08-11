@@ -64,7 +64,7 @@ const AdminView = ({ playersInRoom, socket, activePlayer }) => {
 
   const handlePlaySound = (e) => {
     const type = e.currentTarget.id;
-    socket.emit("sound", activePlayer, `${process.env.PUBLIC_URL} + /${type}.wav`);
+    socket.emit("sound", activePlayer, `${type}.wav`);
   };
 
   return (
