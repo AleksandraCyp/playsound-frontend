@@ -7,6 +7,11 @@ import Join from "./components/Join/Join";
 import AdminView from "./components/AdminView/AdminView";
 import PlayerView from "./components/PlayerView/PlayerView";
 
+import correct from "./dobra-odpowiedz.wav";
+import wrong from "./zla-odpowiedz.wav";
+import next from "./nastepna-runda.wav";
+import fail from "./zegnaj-z-teleturnieju.wav";
+
 function App() {
   const socket = io("https://playsound-backend.herokuapp.com/");
   const [activePlayer, setActivePlayer] = useState(null);
@@ -20,7 +25,10 @@ function App() {
     });
 
     socket.on("newSound", (sound) => {
-      setURL(sound);
+      if (sound === "dobra-odpowiedz.wav") setURL(correct);
+      if (sound === "zla-odpowiedz.wav") setURL(wrong);
+      if (sound === "nastepna-runda.wav") setURL(next);
+      if (sound === "zegnaj-z-teleturnieju.wav") setURL(fail);
       setIsPlaying(true);
     });
   }, []);
@@ -42,10 +50,7 @@ function App() {
         />
       )}
       {activePlayer && !activePlayer.isAdmin && <PlayerView socket={socket} />}
-      <Sound
-        url={URL}
-        playStatus={isPlaying && Sound.status.PLAYING}
-      />
+      <Sound url={URL} playStatus={isPlaying && Sound.status.PLAYING} />
     </div>
   );
 }
