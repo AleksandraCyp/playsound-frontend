@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
+import Sound from "react-sound";
 
 import "./App.css";
 import Join from "./components/Join/Join";
@@ -10,6 +11,8 @@ function App() {
   const socket = io("https://playsound-backend.herokuapp.com/");
   const [activePlayer, setActivePlayer] = useState(null);
   const [playersInRoom, setPlayersInRoom] = useState([]);
+  const [URL, setURL] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     socket.on("newPlayer", (players) => {
@@ -17,13 +20,9 @@ function App() {
     });
 
     socket.on("newSound", (sound) => {
-      let URL
-      if (sound === "dobra-odpowiedz.wav") {
-        URL = "https://docs.google.com/uc?export=download&id=1qVJyF-KQN9Bmn_lqTU-TzsgFUzJ6jc25?fbclid"
-      }
-      const audio = new Audio(URL);
-      audio.play();
-    })
+      setURL(sound);
+      setIsPlaying(true);
+    });
   }, []);
 
   return (
@@ -43,6 +42,10 @@ function App() {
         />
       )}
       {activePlayer && !activePlayer.isAdmin && <PlayerView socket={socket} />}
+      <Sound
+        url={URL}
+        playStatus={isPlaying && Sound.status.PLAYING}
+      />
     </div>
   );
 }
