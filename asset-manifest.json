@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/playsound-frontend/static/css/main.a617e044.chunk.css",
-    "main.js": "/playsound-frontend/static/js/main.4844eacb.chunk.js",
-    "main.js.map": "/playsound-frontend/static/js/main.4844eacb.chunk.js.map",
+    "main.js": "/playsound-frontend/static/js/main.ddba8d59.chunk.js",
+    "main.js.map": "/playsound-frontend/static/js/main.ddba8d59.chunk.js.map",
     "runtime-main.js": "/playsound-frontend/static/js/runtime-main.fc23a49f.js",
     "runtime-main.js.map": "/playsound-frontend/static/js/runtime-main.fc23a49f.js.map",
     "static/js/2.e944902f.chunk.js": "/playsound-frontend/static/js/2.e944902f.chunk.js",
@@ -11,12 +11,16 @@
     "static/js/3.925fca8e.chunk.js.map": "/playsound-frontend/static/js/3.925fca8e.chunk.js.map",
     "index.html": "/playsound-frontend/index.html",
     "static/css/main.a617e044.chunk.css.map": "/playsound-frontend/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.e944902f.chunk.js.LICENSE.txt": "/playsound-frontend/static/js/2.e944902f.chunk.js.LICENSE.txt"
+    "static/js/2.e944902f.chunk.js.LICENSE.txt": "/playsound-frontend/static/js/2.e944902f.chunk.js.LICENSE.txt",
+    "static/media/dobra-odpowiedz.4efe5be8.wav": "/playsound-frontend/static/media/dobra-odpowiedz.4efe5be8.wav",
+    "static/media/nastepna-runda.344ebf3b.wav": "/playsound-frontend/static/media/nastepna-runda.344ebf3b.wav",
+    "static/media/zegnaj-z-teleturnieju.8177ee4e.wav": "/playsound-frontend/static/media/zegnaj-z-teleturnieju.8177ee4e.wav",
+    "static/media/zla-odpowiedz.264e7816.wav": "/playsound-frontend/static/media/zla-odpowiedz.264e7816.wav"
   },
   "entrypoints": [
     "static/js/runtime-main.fc23a49f.js",
     "static/js/2.e944902f.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.4844eacb.chunk.js"
+    "static/js/main.ddba8d59.chunk.js"
   ]
 }
