@@ -17,7 +17,11 @@ function App() {
     });
 
     socket.on("newSound", (sound) => {
-      const audio = new Audio(sound);
+      let URL
+      if (sound === "dobra-odpowiedz.wav") {
+        URL = "https://docs.google.com/uc?export=download&id=1qVJyF-KQN9Bmn_lqTU-TzsgFUzJ6jc25?fbclid"
+      }
+      const audio = new Audio(URL);
       audio.play();
     })
   }, []);
